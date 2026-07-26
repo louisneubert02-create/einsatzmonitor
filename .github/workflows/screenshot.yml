@@ -1,24 +1,25 @@
-name: Einsatzmonitor Screenshot
+name: Einsatzmonitor JPEG Erstellung
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 6 * * *"
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   screenshot:
+    name: Google Tabelle als JPEG
     runs-on: ubuntu-latest
 
     steps:
-    - name: Repository laden
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Repository laden
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Node installieren
+      - name: Node.js installieren
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -29,8 +30,8 @@ jobs:
       - name: Screenshot erstellen
         run: node screenshot.js
 
-- name: Bild speichern
-  uses: EndBug/add-and-commit@v9
-  with:
-    add: "einsatzplan.jpeg"
-    message: "Aktualisiere Einsatzmonitor Bild"
+      - name: JPEG speichern
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: einsatzplan.jpeg
+          message: "Automatische Aktualisierung Einsatzmonitor"
