@@ -1,4 +1,4 @@
-name: Einsatzmonitor JPEG 2.0
+name: Einsatzmonitor JPEG 3.0
 
 on:
   workflow_dispatch:
