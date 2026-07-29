@@ -18,7 +18,7 @@ const puppeteer = require("puppeteer");
   });
 
   await page.goto(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkREstv-RsPIW5mLUoslUtrjZBxdbetrB-ce7GaPm9WSfeH5-B8bjgeitE9LiGd3qh22AXWs0Ja_Mq/pubhtml",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkREstv-RsPIW5mLUoslUtrjZBxdbetrB-ce7GaPm9WSfeH5-B8bjgeitE9LiGd3qh22AXWs0Ja_Mq/pubhtml?gid=238104781&single=true",
     {
       waitUntil: "networkidle0",
       timeout: 120000
